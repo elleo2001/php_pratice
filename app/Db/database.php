@@ -101,6 +101,7 @@ class Database{
     }
 
     /**
+     * Método responsável por executar uma consulta no banco
      * @param string
      * @param string
      * @param string
@@ -113,9 +114,10 @@ class Database{
         $where = strlen($limit) ? 'LIMIT '.$limit : '';
 
 
-
+        //MONTA A QUERY
         $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order.' '.$limit;
 
+        //EXECUTA A QUERY
         return $this->execute($query);
     }
 }
