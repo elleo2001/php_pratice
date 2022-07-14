@@ -99,4 +99,23 @@ class Database{
         //RETORNA O ID INSERIDO
         return $this->connection->lastInsertId();
     }
+
+    /**
+     * @param string
+     * @param string
+     * @param string
+     * @return PDOStatement
+     */
+    public function select($where = null, $order = null, $limit = null, $fields = '*'){
+        //DADOS DA QUERY
+        $where = strlen($where) ? 'WHERE '.$where : '';
+        $where = strlen($where) ? 'ORDER BY '.$order : '';
+        $where = strlen($limit) ? 'LIMIT '.$limit : '';
+
+
+
+        $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order.' '.$limit;
+
+        return $this->execute($query);
+    }
 }

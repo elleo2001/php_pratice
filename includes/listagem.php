@@ -1,3 +1,11 @@
+<?php
+
+    $resultados = '';
+    foreach($vagas as $vaga){
+        $resultados .= '<tr>
+                            <td>'
+    }
+?>
 <main>
 
     <section>
@@ -6,7 +14,7 @@
         </a>
     </section>
 
-    <table class="table">
+    <table class="table bg-light mt-3">
 
         <thead>
             <tr>
@@ -14,9 +22,13 @@
                 <th>Título</th>
                 <th>Descrição</th>
                 <th>Status</th>
-                <th>ID</th>
-                <th>ID</th>
-        
+                <th>Data</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?=$resultados?>
+        </tbody>
 
     </table>
 
